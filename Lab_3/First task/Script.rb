@@ -43,5 +43,3 @@ while age != -1 do
 end
 
 write_to_file(truth_people, output_path)
-
-# string.inspect
