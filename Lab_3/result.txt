@@ -1,0 +1,3 @@
+Name surname: Barak Obama		age: 56
+Name surname: Akulov Michail		age: 19
+Name surname: Shestakov Andrey		age: 19
