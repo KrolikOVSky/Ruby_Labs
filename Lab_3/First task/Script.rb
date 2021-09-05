@@ -22,8 +22,8 @@ def get_data_from_user
   return gets.chomp("\n").to_i
 end
 
-input_path = "/home/alex/RubymineProjects/Ruby_Labs/Lab_3/input.txt"
-output_path = "/home/alex/RubymineProjects/Ruby_Labs/Lab_3/result.txt"
+input_path = "/home/alex/RubymineProjects/Ruby_Labs/Lab_3/First task/input.txt"
+output_path = "/home/alex/RubymineProjects/Ruby_Labs/Lab_3/First task/result.txt"
 
 age = get_data_from_user
 truth_people = []
