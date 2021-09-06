@@ -3,14 +3,14 @@ def read_from_keyboard
   puts "What you want to do?\n- For get your balance enter \"B\"\n- For deposit money enter \"D\"\n- For withdraw any money enter \"W\" \n- Enter \"Q\" for exit"
   command = gets.chomp("\n").to_s.downcase
   puts "---------------------------------"
-  return command
+  command
 end
 
 def get_balance_from_file(path)
   if File.exist?(path)
-    return File.read(path).chomp("\n")
+    File.read(path).chomp("\n")
   else
-    return 100.0
+    100.0
   end
 end
 
@@ -35,20 +35,21 @@ def deposit(value)
     puts "How much you want to deposit"
     inserted = gets.chomp("\n").to_i
     if inserted > 0
-      return inserted
+      inserted
     else
       puts "Wrong number please try again"
-      return get_money(value)
+      get_money(value)
     end
   end
 
   inserted = get_money(value)
   puts "You deposited #{inserted}, your balance became #{value + inserted}"
-  return value + inserted
+  (value + inserted)
 end
 
 def withdraw(value)
   value = value.to_i
+
   def get_value(value)
     balance(value)
     puts "How much money you want to withdraw?"
@@ -58,13 +59,13 @@ def withdraw(value)
       puts "Please try again"
       get_value(value)
     else
-      return entered
+      entered
     end
-
   end
+
   entered = get_value(value)
   puts "You withdraw #{entered}, your balance became #{value - entered}"
-  return value - entered
+  (value - entered)
 end
 
 def main
