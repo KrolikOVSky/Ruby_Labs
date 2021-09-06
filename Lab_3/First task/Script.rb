@@ -9,6 +9,10 @@ def read_from_file(path)
   return people
 end
 
+def rrr
+
+end
+
 def write_to_file(content, path)
   file = File.open(path, "w")
   content.each do |item|
