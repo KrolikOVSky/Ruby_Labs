@@ -8,7 +8,7 @@ class CashMachine
 		def get_money
 			get_balance
 			puts "How much you want to deposit"
-			inserted = gets.chomp("\n").to_i
+			inserted = gets.to_i
 			if inserted > 0
 				inserted
 			else
@@ -73,7 +73,7 @@ end
 
 class App
 	def self.init
-		input_path = "/home/alex/RubymineProjects/Ruby_Labs/Lab_4/balance.txt"
+		input_path = "./balance.txt"
 		atm = CashMachine.new(input_path)
 		command = "b"
 		while command != "q"
