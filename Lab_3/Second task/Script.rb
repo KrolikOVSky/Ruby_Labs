@@ -1,8 +1,12 @@
+require '../../utilities'
+
+DEFAULT_VALUE = 100
+
 def read_from_keyboard
-  puts "---------------------------------"
-  puts "What you want to do?\n- For get your balance enter \"B\"\n- For deposit money enter \"D\"\n- For withdraw any money enter \"W\" \n- Enter \"Q\" for exit"
+  message_out "---------------------------------"
+  message_out "What you want to do?\n- For get your balance enter \"B\"\n- For deposit money enter \"D\"\n- For withdraw any money enter \"W\" \n- Enter \"Q\" for exit"
   command = gets.chomp("\n").to_s.downcase
-  puts "---------------------------------"
+  message_out "---------------------------------"
   command
 end
 
@@ -10,21 +14,21 @@ def get_balance_from_file(path)
   if File.exist?(path)
     File.read(path).chomp("\n")
   else
-    100.0
+    DEFAULT_VALUE
   end
 end
 
 def write_to_file(path, value)
   File.write(path, value, mode: "w")
-  puts "Good bye"
+  message_out "Good bye"
 end
 
 def wrong_request
-  puts "Wrong command, please enter again"
+  message_out "Wrong command, please enter again"
 end
 
 def balance(value)
-  puts "Your balance is #{value}"
+  message_out "Your balance is #{value}"
 end
 
 def deposit(value)
@@ -32,18 +36,18 @@ def deposit(value)
 
   def get_money(value)
     balance(value)
-    puts "How much you want to deposit"
-    inserted = gets.chomp("\n").to_i
+    message_out "How much you want to deposit"
+    inserted = gets.to_i
     if inserted > 0
       inserted
     else
-      puts "Wrong number please try again"
+      message_out "Wrong number please try again"
       get_money(value)
     end
   end
 
   inserted = get_money(value)
-  puts "You deposited #{inserted}, your balance became #{value + inserted}"
+  message_out "You deposited #{inserted}, your balance became #{value + inserted}"
   (value + inserted)
 end
 
@@ -52,11 +56,11 @@ def withdraw(value)
 
   def get_value(value)
     balance(value)
-    puts "How much money you want to withdraw?"
+    message_out "How much money you want to withdraw?"
     entered = gets.to_i
     if entered > value
-      puts "You want to withdraw more than you have"
-      puts "Please try again"
+      message_out "You want to withdraw more than you have"
+      message_out "Please try again"
       get_value(value)
     else
       entered
@@ -64,8 +68,8 @@ def withdraw(value)
   end
 
   entered = get_value(value)
-  puts "You withdraw #{entered}, your balance became #{value - entered}"
-  (value - entered)
+  message_out "You withdraw #{entered}, your balance became #{value - entered}"
+  value - entered
 end
 
 def main
@@ -89,6 +93,7 @@ def main
     command = read_from_keyboard
   end
   write_to_file(path, money)
+  money
 end
 
-main
+# main

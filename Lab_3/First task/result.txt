@@ -1,1 +1,4 @@
-Name surname: Barak Obama		age: 56
+Name surname: Alex Berton		age: 36
+Name surname: Akulov Michail		age: 19
+Name surname: Shestakov Andrey		age: 19
+Name surname: Klinikov Rostislav		age: 20
