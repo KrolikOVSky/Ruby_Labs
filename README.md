@@ -1,4 +1,5 @@
-# `Ruby Labs`
+# <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Ruby_logo.svg" width="30"/> Ruby Labs
+
 ## On the subject "Web programming and mobile development
 
 ### For running you should have:
@@ -15,5 +16,5 @@
  
  
 # `P.S.`
-### Every one who visit this repo, ***please*** can you give me a star ⭐ *(at the right corner of page)* if my code helped you or you just like this.
+### Every one who visit this repo, ***please*** can you give me a star ⭐ *(at the right corner of the page)* if my code helped you or you just like this.
 ### Thanks!!!
