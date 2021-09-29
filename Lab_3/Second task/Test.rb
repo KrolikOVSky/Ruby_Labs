@@ -1,6 +1,7 @@
 require '../../utilities'
 $stage = "test"
 require './Script'
+require "rspec"
 
 RSpec.describe "Main" do
 
