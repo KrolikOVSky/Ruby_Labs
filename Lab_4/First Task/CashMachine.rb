@@ -55,6 +55,7 @@ class CashMachine
 
 		def get_balance
 			puts "Your balance is #{@balance}"
+			@balance
 		end
 
 		def deposit
@@ -69,6 +70,9 @@ class CashMachine
 			@balance -= entered
 		end
 
+		def wrong_request
+			puts "Wrong command, please enter again"
+		end
 end
 
 class App
@@ -93,7 +97,6 @@ class App
 			command = atm.read_from_keyboard
 		end
 		atm.write_to_file(input_path)
-
 	end
 end
 
